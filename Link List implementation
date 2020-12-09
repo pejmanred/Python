@@ -1,0 +1,146 @@
+
+class Node:
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+        
+class LL:
+    def __init__(self):
+        self.head=Node()
+         #self.head=None
+    
+    
+    def append(self,data):          #Add data to the end of the LinkList
+        new_node=Node(data)
+        cur=self.head
+        while cur.next != None:
+            cur=cur.next
+        cur.next=new_node
+        
+        #return new_node.data
+             
+        
+    def length(self):       #print length of the LinkList
+        cur=self.head
+        len=0
+        while cur.next != None:
+            len +=1
+            #print(cur.data)
+            cur=cur.next
+            print(cur.data)
+        return len
+    
+    def disp(self):         #print the linklist's data
+        elemn=[]
+        cur_n=self.head
+        while cur_n.next != None:
+            cur_n=cur_n.next
+            #print(self.head.data)
+            #print(cur_n.data)
+            elemn.append(cur_n.data)
+            #print(cur_n.data)
+            #cur_n=cur_n.next   #when using atbegin() use this one line 37
+        #print (elemn)
+        
+        return elemn
+        
+        
+        
+    def get(self,index):        # recive the index and print the corresponding value
+        if index >= self.length():
+            print('ERROR: Out of range')
+            return None
+        this=self.head
+        ind=0
+        while this.next != None:
+            this=this.next
+            if index==ind:
+                return this.data
+            #this=this.next
+            ind +=1
+            
+    def er(self,index):         #Erase a Node 
+        this=self.head
+        inx=0
+        while True:
+              lastNode=this
+              this=this.next
+              if inx==index:
+                  lastNode.next=this.next
+                  return
+              inx +=1
+        
+    def atbegin(self,data):  #This one doesnt work with append()
+        new_node=Node(data)
+        
+        #this=self.head
+        #if self.head == None:
+            #self.head.next=new_node
+            #return
+        new_node.next=self.head
+        self.head=new_node
+        
+    def atbegin1(self,data):    #Add data in the begining of the LinkList
+        new_node=Node(data)
+        
+        this=self.head
+        #if self.head == None:
+            #self.head.next=new_node
+            #return
+        new_node.next=this.next
+        self.head.next=new_node
+        
+    def show(self):             #Same as Disp() above
+        this=self.head
+        k=0
+        while this.next != None:
+            this=this.next
+            #print('k:',k)
+            print(this.data)
+            #this=this.next
+            k+=1
+            
+
+    def middle(self,index,data):        #Add node in the middle of the LinkList
+        newn=Node(data)
+        this=self.head
+        inx=0
+        while True:
+              lastNode=this
+              this=this.next
+              if inx==index:
+                  newn.next=this.next
+                  this.next=newn
+                  return
+              inx +=1
+              
+              
+              
+    def sortt(self):        #convert Linklink -> array -> sorted -> LinkList
+        elemn=[]
+        cur_n=self.head
+        while cur_n.next != None:
+            cur_n=cur_n.next
+            #print(self.head.data)
+            #print(cur_n.data)
+            elemn.append(cur_n.data)
+            #print(cur_n.data)
+            #cur_n=cur_n.next   #when using atbegin() use this one line 37
+        #print (elemn)
+        #elemn.sort()
+        
+        for i in range(1,len(elemn)):
+            key_item=elemn[i]
+            j=i-1
+            while j >= 0 and elemn[j] > key_item:
+                 elemn[j+1]=elemn[j]
+                 j -=1
+            elemn[j+1]=key_item
+            
+        
+        this=self.head
+        
+        for x in elemn:
+            #print(x)
+            this.next.data=x
+            this=this.next
