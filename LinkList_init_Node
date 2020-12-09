@@ -1,0 +1,161 @@
+class Node:
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+        
+class LinkLi:
+    def __init__(self):
+        self.head=Node()
+        
+    def test(self,data):
+        newnode=Node(data)
+        
+        this=self.head
+        
+        while this.next != None:
+            this=this.next
+        this.next=newnode
+        print(this.next.data)
+
+
+w=LinkLi()
+w.test(5)
+w.test(50)
+w.test(500)
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+class Node:
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+        
+class LinkLi:
+    def __init__(self):
+        self.head=None
+        
+    def test(self,data):
+        newnode=Node(data)
+        
+        self.head=newnode
+        this=self.head
+        
+        while this.next != None:
+            this=this.next
+        this.next=newnode
+        print(this.next.data)
+        
+        
+    
+        
+w=LinkLi()
+w.test(4)
+w.test(40)
+w.test(400)
+
+
+
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+class Node:
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+        
+class LinkLi:
+    
+        
+    def test(self,data):
+        newnode=Node(data)
+        
+        self.head=newnode
+        this=self.head
+        
+        while this.next != None:
+            this=this.next
+        this.next=newnode
+        print(this.next.data)
+        
+w=LinkLi()
+w.test(3)
+w.test(30)
+w.test(300)
+#//////////////////////////////////////////////////////////////////
+
+class node:
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+
+class Link:
+    def __init__(self):
+        self.head=node()
+        #self.head=None   
+        
+   
+    def app(self,data):  #Append data to the LinkList
+        
+        newnod=node(data)
+        
+        if self.head == None: 
+            self.head=node(data)
+            return
+        
+        last=self.head
+        while last.next != None:
+            last=last.next
+        last.next=newnod
+        #print(last.next.data)
+    
+    
+    def che(self):   #Check to see if pointer to a node exist or not
+        
+        #self.head=node()    
+        this=self.head
+        
+        if this == None:
+            print("Point to nothing")
+        if this != None:
+            print('Point to a NODE')
+            
+    def sh(self):           #Print tha value
+        this=self.head
+        while this.next != None:
+            print(this.next.data)
+            this=this.next
+                       
+           
+q=Link()
+q.app(2)
+q.app(5)
+
+q.sh() 
+
+q.che()
+
+print(q.head)
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$ 
+class node:
+    def __init__(self,data=None):
+        self.data=data
+        self.next=None
+
+class Link:
+    def __init__(self):
+        #self.head=node()
+        self.head=None   #plsy with these two line and seee how che react
+        
+   
+    def app(self,data):
+        
+        newnod=node(data)
+        
+        if self.head == None: 
+            self.head=node(data)
+            return
+        
+        last=self.head
+        while last.next != None:
+            last=last.next
+        last.next=newnod
+        #print(last.next.data)
+    
+    
+    def che(self):
