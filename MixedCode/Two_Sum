@@ -1,0 +1,17 @@
+# return indices of the two numbers such that they add up to target
+def twoSum(nums, target):
+        
+        table={}
+        
+        for i in range(len(nums)):
+            #if its in the table print out
+            if nums[i] in table:
+                return [table[nums[i]],i]
+            else:
+                table[target - nums[i]]=i
+                
+List=[0,1,3,4,7,2,5]                
+#___________________
+print(twoSum(List,10))
+#__________________
+OutPut: [2, 4]
