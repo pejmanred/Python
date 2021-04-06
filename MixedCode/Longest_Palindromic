@@ -11,7 +11,7 @@ def Longest_Pali(s):
             test=CheckStr(i,i)
             if len(test) > len(res):
                 res=test
-            test=CheckStr(i,i+1)
+            test=CheckStr(i,i+1)    #For the case that if the strinf is even!
             if len(test) > len(res):
                 res=test
         return res
